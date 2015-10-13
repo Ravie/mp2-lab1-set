@@ -8,7 +8,7 @@
 #include "tset.h"
 
 TSet::TSet(int mp) : 
-	MaxPower(mp), MaxPower(mp){}
+	MaxPower(mp), BitField(mp) {}
 
 // конструктор копирования
 TSet::TSet(const TSet &s) : 
