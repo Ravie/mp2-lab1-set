@@ -70,10 +70,16 @@ TSet TSet::operator+(const TSet &s) // объединение
 
 TSet TSet::operator+(const int Elem) // объединение с элементом
 {
+	if (!IsMember(Elem))
+		InsElem(Elem);
+	return *this;
 }
 
 TSet TSet::operator-(const int Elem) // разность с элементом
 {
+	if (IsMember(Elem))
+		DelElem(Elem);
+	return *this;
 }
 
 TSet TSet::operator*(const TSet &s) // пересечение
