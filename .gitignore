@@ -31,3 +31,6 @@
 *.sdf
 *.log
 *.tlog
+*.pdb
+*.idb
+*.opensdf
