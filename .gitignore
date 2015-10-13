@@ -34,3 +34,5 @@
 *.pdb
 *.idb
 *.opensdf
+*.ilk
+*.cache
