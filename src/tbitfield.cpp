@@ -9,8 +9,11 @@
 
 #define TYPE_SIZE 16
 
-TBitField::TBitField(int len) : BitLen(len)
+TBitField::TBitField(int len)
 {
+	if (len <= 0)
+		throw "UNEXPECTED_SIZE";
+	BitLen = len;
 	MemLen = (len + TYPE_SIZE-1) >> int(log(TYPE_SIZE)/log(2)); //в эл-те рћем 16 бит (TELEM==int) 
 	pMem = new TELEM[MemLen];
 	if (pMem != NULL)
