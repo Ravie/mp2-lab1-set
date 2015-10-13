@@ -54,21 +54,23 @@ int TBitField::GetLength(void) const // получить длину (к-во б�
 
 void TBitField::SetBit(const int n) // установить бит
 {
-	if ((n > -1) && (n < BitLen))
-		pMem[GetMemIndex(n)] |= GetMemMask(n);
+	if ((n <= -1) || (n >= BitLen))
+		throw "UNEXPECTED_INDEX";
+	pMem[GetMemIndex(n)] |= GetMemMask(n);
 }
 
 void TBitField::ClrBit(const int n) // очистить бит
 {
-	if ((n > -1) && (n < BitLen))
-		pMem[GetMemIndex(n)] &= ~GetMemMask(n);
+	if ((n <= -1) || (n >= BitLen))
+		throw "UNEXPECTED_INDEX";
+	pMem[GetMemIndex(n)] &= ~GetMemMask(n);
 }
 
 int TBitField::GetBit(const int n) const // получить значение бита
 {
-	if ((n > -1) && (n < BitLen))
-		return pMem[GetMemIndex(n)] & GetMemMask(n);
-	return 0;
+	if ((n <= -1) || (n >= BitLen))
+		throw "UNEXPECTED_INDEX";
+	return pMem[GetMemIndex(n)] & GetMemMask(n);
 }
 
 // битовые операции
