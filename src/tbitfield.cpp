@@ -7,7 +7,7 @@
 
 #include "tbitfield.h"
 
-#define TYPE_SIZE 16
+#define TYPE_SIZE sizeof(TELEM)*8
 
 TBitField::TBitField(int len)
 {
