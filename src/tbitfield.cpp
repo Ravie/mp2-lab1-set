@@ -172,6 +172,6 @@ ostream &operator<<(ostream &ostr, const TBitField &bf) // вывод
 {
 	int len = bf.GetLength();
 	for (int i = 0; i < len; i++)
-		if (bf.GetBit(i)) ostr << '1'; else ostr << '1';
+		if (bf.GetBit(i)) ostr << '1'; else ostr << '0';
 	return ostr;
 }
